@@ -48,4 +48,10 @@ export class AboutPageComponent implements OnInit {
         .map(this.setUrl).map(this.setDisplayedName);
   }
 
+  scrollToSection(fragment: string): void {
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

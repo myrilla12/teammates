@@ -98,34 +98,51 @@
     </li>
   </ol>
 
-  <h3>Contributors</h3>
+  <nav id="contributors" class="navbar bg-body-tertiary px-3 mb-3">
+    <h3>Other contributors</h3>
+    <ul class="nav nav-pills">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Contribution level</a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" (click)="scrollToSection('scrollspyHeading1')">Major contributions</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" (click)="scrollToSection('scrollspyHeading2')">Multiple contributions</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" (click)="scrollToSection('scrollspyHeading3')">One-time contributions</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <div class="scrollable-container bg-body-tertiary p-3 rounded-2">
+    <div data-bs-spy="scroll" data-bs-target="#contributors" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+      <h4 id="scrollspyHeading1">Major contributions:</h4>
+      <ol>
+        <li *ngFor="let contributor of majorContributors">
+          <a href="{{ contributor.url }}" target="_blank" rel="noopener noreferrer">{{ contributor.name }}</a>
+        </li>
+      </ol>
 
-  <h4>Major contributions:</h4>
-  <ol>
-    <li *ngFor="let contributor of majorContributors">
-      <a href="{{ contributor.url }}" target="_blank" rel="noopener noreferrer">{{ contributor.name }}</a>
-    </li>
-  </ol>
+      <h4 id="scrollspyHeading2">Multiple contributions:</h4>
+      <ol>
+        <li *ngFor="let contributor of multipleContributors">
+          <span *ngIf="contributor.url">
+            <a href="{{ contributor.url }}" target="_blank" rel="noopener noreferrer">{{ contributor.displayedName }}</a>
+          </span>
+          <span *ngIf="!contributor.url">{{ contributor.displayedName }}</span>
+        </li>
+      </ol>
 
-  <h4>Multiple contributions:</h4>
-  <ol>
-    <li *ngFor="let contributor of multipleContributors">
-      <span *ngIf="contributor.url">
-        <a href="{{ contributor.url }}" target="_blank" rel="noopener noreferrer">{{ contributor.displayedName }}</a>
-      </span>
-      <span *ngIf="!contributor.url">{{ contributor.displayedName }}</span>
-    </li>
-  </ol>
-
-  <h4>One-time contributions:</h4>
-  <ol>
-    <li *ngFor="let contributor of singleContributors">
-      <span *ngIf="contributor.url">
-        <a href="{{ contributor.url }}" target="_blank" rel="noopener noreferrer">{{ contributor.displayedName }}</a>
-      </span>
-      <span *ngIf="!contributor.url">{{ contributor.displayedName }}</span>
-    </li>
-  </ol>
+      <h4 id="scrollspyHeading3">One-time contributions:</h4>
+      <ol>
+        <li *ngFor="let contributor of singleContributors">
+          <span *ngIf="contributor.url">
+            <a href="{{ contributor.url }}" target="_blank" rel="noopener noreferrer">{{ contributor.displayedName }}</a>
+          </span>
+          <span *ngIf="!contributor.url">{{ contributor.displayedName }}</span>
+        </li>
+      </ol>
+    </div>
+  </div>
 
   <p>
     Would you like to join the TEAMMATES team as a contributor? <a tmRouterLink="/web/front/contact">Contact us.</a>

@@ -8,6 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: AboutPageComponent,
+    data: { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled' },
   },
 ];
 

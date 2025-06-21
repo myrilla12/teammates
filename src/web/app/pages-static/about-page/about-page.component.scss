@@ -15,3 +15,9 @@
 .core-team-details-cell {
   padding-right: 40px;
 }
+
+.scrollable-container {
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ddd; 
+}

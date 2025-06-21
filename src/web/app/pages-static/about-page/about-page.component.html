@@ -75,29 +75,57 @@
     </tr>
   </table>
 
-  <h3>Past Team Members:</h3>
-  <ol>
-    <li *ngFor="let teamMember of pastTeamMembers">
-      <span *ngIf="teamMember.url">
-        <a href="{{ teamMember.url }}" target="_blank" rel="noopener noreferrer">{{ teamMember.name }}</a>
-      </span>
-      <span *ngIf="!teamMember.url">{{ teamMember.name }}</span>
-      <ul>
-        <li *ngFor="let position of teamMember.pastPositions">
-          {{ position }}
-        </li>
-      </ul>
-    </li>
-  </ol>
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button bg-body-tertiary" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          <h3>Past Team Members:</h3>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body">
+          <ol>
+            <li *ngFor="let teamMember of pastTeamMembers">
+              <span *ngIf="teamMember.url">
+                <a href="{{ teamMember.url }}" target="_blank" rel="noopener noreferrer">{{ teamMember.name }}</a>
+              </span>
+              <span *ngIf="!teamMember.url">{{ teamMember.name }}</span>
+              <ul>
+                <li *ngFor="let position of teamMember.pastPositions">
+                  {{ position }}
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <h3>Past Committers:</h3>
-  <ol>
-    <li *ngFor="let committer of pastCommitters">
-      <a href="{{ committer.url }}" target="_blank" rel="noopener noreferrer">{{ committer.name }}</a>
-      ({{ committer.startPeriod }} - {{ committer.endPeriod }})
-    </li>
-  </ol>
+  <br>
 
+  <div class="accordion" id="accordionPanelsStayOpenExample2">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <button class="accordion-button bg-body-tertiary" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+          <h3>Past Committers:</h3>
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+        <div class="accordion-body">
+          <ol>
+            <li *ngFor="let committer of pastCommitters">
+              <a href="{{ committer.url }}" target="_blank" rel="noopener noreferrer">{{ committer.name }}</a>
+              ({{ committer.startPeriod }} - {{ committer.endPeriod }})
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  
   <nav id="contributors" class="navbar bg-body-tertiary px-3 mb-3">
     <h3>Other contributors</h3>
     <ul class="nav nav-pills">
@@ -144,6 +172,7 @@
     </div>
   </div>
 
+  <hr class="divider">
   <p>
     Would you like to join the TEAMMATES team as a contributor? <a tmRouterLink="/web/front/contact">Contact us.</a>
   </p>

@@ -83,7 +83,7 @@
         </button>
       </h2>
       <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-        <div class="accordion-body">
+        <div class="accordion-body scrollable-container">
           <ol>
             <li *ngFor="let teamMember of pastTeamMembers">
               <span *ngIf="teamMember.url">
@@ -112,7 +112,7 @@
         </button>
       </h2>
       <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
-        <div class="accordion-body">
+        <div class="accordion-body scrollable-container">
           <ol>
             <li *ngFor="let committer of pastCommitters">
               <a href="{{ committer.url }}" target="_blank" rel="noopener noreferrer">{{ committer.name }}</a>
@@ -141,8 +141,8 @@
       </li>
     </ul>
   </nav>
-  <div class="scrollable-container bg-body-tertiary p-3 rounded-2">
-    <div data-bs-spy="scroll" data-bs-target="#contributors" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
+  <div class="scrollable-container p-3 rounded-2">
+    <div data-bs-spy="scroll" data-bs-target="#contributors" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-3 rounded-2" tabindex="0">
       <h4 id="scrollspyHeading1">Major contributions:</h4>
       <ol>
         <li *ngFor="let contributor of majorContributors">

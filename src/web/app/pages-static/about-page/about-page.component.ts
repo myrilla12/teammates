@@ -5,12 +5,13 @@ import { default as developers } from '../../../data/developers.json';
  * About page.
  */
 @Component({
-  selector: 'tm-about-page',
+  selector: 'tm-about-page', 
   templateUrl: './about-page.component.html',
   styleUrls: ['./about-page.component.scss'],
 })
 export class AboutPageComponent implements OnInit {
 
+  isCollapsed = false;
   nDevelopers: number = 0;
   teamMembers: any[] = [];
   pastTeamMembers: any[] = [];

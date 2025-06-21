@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutPageComponent } from './about-page.component';
 import { TeammatesRouterModule } from '../../components/teammates-router/teammates-router.module';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     TeammatesRouterModule,
+    NgbCollapseModule,
   ],
 })
 export class AboutPageModule { }

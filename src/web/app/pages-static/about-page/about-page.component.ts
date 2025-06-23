@@ -5,12 +5,13 @@ import { default as developers } from '../../../data/developers.json';
  * About page.
  */
 @Component({
-  selector: 'tm-about-page',
+  selector: 'tm-about-page', 
   templateUrl: './about-page.component.html',
   styleUrls: ['./about-page.component.scss'],
 })
 export class AboutPageComponent implements OnInit {
 
+  isCollapsed = false;
   nDevelopers: number = 0;
   teamMembers: any[] = [];
   pastTeamMembers: any[] = [];
@@ -48,4 +49,10 @@ export class AboutPageComponent implements OnInit {
         .map(this.setUrl).map(this.setDisplayedName);
   }
 
+  scrollToSection(fragment: string): void {
+    const element = document.getElementById(fragment);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }
